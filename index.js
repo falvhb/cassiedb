@@ -35,9 +35,17 @@ app.get('/', function(request, response) {
 
 app.post('/api/conversation', function(req, res) {
   res.send(STATIC.OK);
-  simplePostgres.simpleInsert('conversation_staging', {
-    email: req.body.email || 'unknown',
-    data: JSON.stringify(req.body) || '{}'
+  simplePostgres.simpleInsert('conversation', {
+    channel: req.body.channel || 'unknown',
+    message_text: req.body.message_text  || 'unknown',
+    message_sourcetext: req.body.message_sourcetext  || 'unknown',
+    message_language: req.body.message_language  || 'xx',
+    message_sourcelanguage: req.body.message_sourcelanguage  || 'xx',
+    reply_intent: req.body.reply_intent  || 'unknown',
+    reply_text: req.body.reply_text  || 'unknown',
+    reply_language: req.body.reply_language  || 'xx',
+    debug: req.body.debug  || 'unknown',
+    jsondata: JSON.stringify(req.body) || '{}'
   });
 });
 
