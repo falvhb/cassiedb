@@ -1,0 +1,16 @@
+{
+  "name": "cassiedb",
+  "version": "0.2.5",
+  "description": "CassieDB",
+  "engines": {
+    "node": "5.9.1"
+  },
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "ejs": "2.4.1",
+    "express": "4.13.3"
+  }
+}
